@@ -1,0 +1,329 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: #d4a373;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+header {
+    background-color: #fff8f0;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+/* 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #6b4226;
+    font-weight: bold;
+    text-decoration: none;
+} */
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.hero img:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: #d4a373;
+    border-color: #b07d52;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #b07d52;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* Base Styles (Mobile-First Approach) */
+
+/* Navigation Menu - Mobile First */
+nav {
+    position: relative;
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Icône du menu burger */
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Menu */
+
+/* .menu-toggle div {
+    width: 100%;
+    height: 5px;
+    background-color: red;
+    border-radius: 2px;
+} */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.nav li {
+    margin-left: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #6b4226;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product img {
+    width: 80%;
+    border: 2px solid #6b4226;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+.product img:hover {
+    transform: rotate(5deg);
+}
+.product:nth-child(odd) {
+    background-color: #f0e5d8;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+.products, .contact {
+    padding: 20px;
+}
+
+
+.product {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Grid for Products Page - Mobile First */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.other-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 600px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #f8f8f8;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul li {
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav ul li a {
+        color: #333;
+    }
+
+     .menu-toggle {
+        display: block;
+    }
+}
+
+/* Tablet View (≥ 772px) */
+@media (min-width: 772px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .product img {
+        border-radius: 50%; /* Circular images on the second page */
+    }
+}
+
+/* Large Screen View (≥ 992px) */
+@media (min-width: 992px) {
+    nav ul.active {
+        display: flex;
+    }
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+        display: grid;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .other-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .product img {
+        width: 100%;
+        border: 2px solid #6b4226;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        transition: transform 0.3s;
+    }
+    /* .carousel-container {
+        position: relative;
+        max-width: 600px;
+        margin: auto;
+        overflow: hidden;
+    }
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .carousel-images img {
+        width: 100%;
+        flex-shrink: 0;
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    } */
+    .prev {
+        left: 0;
+    }
+    .next {
+        right: 0;
+    }
+}
+
+/* Prefers Reduced Motion */
+
+/* @media (prefers-reduced-motion: reduce) {
+    .carousel-images {
+        transition: none;
+    }
+} */
+
+/* Dark Mode */
+/* @media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #222;
+        color: #ffcc00;
+        border-color: black;
+    }
+} */
+
+
+footer {
+    background-color: #fff8f0;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+.contact input, .contact textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact button {
+    background-color: #d4a373;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
